@@ -1,0 +1,10 @@
+.org-id-locations
+TAGS
+auto-save-list
+elpa
+eshell
+*.dat
+*.eld
+session*
+url
+tramp
