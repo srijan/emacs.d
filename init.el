@@ -123,7 +123,7 @@ programming."
 (package-initialize)
 
 (setq package-list
-      '(ag auto-complete autopair butler command-t csv-mode deferred diff-hl elfeed-web elfeed elixir-mode erlang ess etags-table find-file-in-project flymake-cursor flymake-jshint flymake-json flymake-php flymake-python-pyflakes flymake-shell flymake-easy git-gutter-fringe+ fringe-helper git-gutter+ goto-last-change helm idomenu ipython jinja2-mode leuven-theme magit git-rebase-mode git-commit-mode markdown-mode monokai-theme multi-term mustang-theme nginx-mode oauth2 org-pomodoro alert php-mode popup popwin projectile pkg-info epl dash python-mode python-pep8 python-pylint rfringe s simple-httpd soft-morning-theme solarized-theme sql-indent sublime-themes twittering-mode w3 w3m web web-mode zenburn-theme))
+      '(ag auto-complete autopair butler csv-mode deferred diff-hl elfeed-web elfeed elixir-mode erlang ess etags-table find-file-in-project flymake-cursor flymake-jshint flymake-json flymake-php flymake-python-pyflakes flymake-shell flymake-easy git-gutter-fringe+ fringe-helper git-gutter+ goto-last-change helm idomenu jinja2-mode leuven-theme magit git-rebase-mode git-commit-mode markdown-mode monokai-theme multi-term mustang-theme nginx-mode oauth2 org-pomodoro alert php-mode popup popwin projectile pkg-info epl dash rfringe s simple-httpd soft-morning-theme solarized-theme sql-indent sublime-themes twittering-mode w3 w3m web web-mode zenburn-theme))
 
 (mapc
  (lambda (package)
