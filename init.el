@@ -123,7 +123,7 @@ programming."
 (package-initialize)
 
 (setq package-list
-      '(ag auto-complete autopair butler csv-mode deferred diff-hl elfeed-web elfeed elixir-mode erlang ess etags-table find-file-in-project flymake-cursor flymake-jshint flymake-json flymake-php flymake-python-pyflakes flymake-shell flymake-easy git-gutter-fringe+ fringe-helper git-gutter+ goto-last-change helm idomenu jinja2-mode leuven-theme magit git-rebase-mode git-commit-mode markdown-mode monokai-theme multi-term mustang-theme nginx-mode oauth2 org-pomodoro alert php-mode popup popwin projectile pkg-info epl dash rfringe s simple-httpd soft-morning-theme solarized-theme sql-indent sublime-themes twittering-mode w3 w3m web web-mode zenburn-theme evil-mode))
+      '(ag auto-complete autopair butler csv-mode deferred diff-hl elfeed-web elfeed elixir-mode erlang ess etags-table find-file-in-project flymake-cursor flymake-jshint flymake-json flymake-php flymake-python-pyflakes flymake-shell flymake-easy git-gutter-fringe+ fringe-helper git-gutter+ goto-last-change helm idomenu jinja2-mode leuven-theme magit git-rebase-mode git-commit-mode markdown-mode monokai-theme multi-term mustang-theme nginx-mode oauth2 org-pomodoro alert php-mode popup popwin projectile pkg-info epl dash rfringe s simple-httpd soft-morning-theme solarized-theme sql-indent sublime-themes twittering-mode w3 w3m web web-mode zenburn-theme evil))
 
 (mapc
  (lambda (package)
@@ -135,6 +135,14 @@ programming."
 ;; Evil mode
 (require 'evil)
 (evil-mode 1)
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-unset-key (kbd "C-<down-mouse-1>"))
+(global-set-key (kbd "C-<mouse-1>") 'mc/add-cursor-on-click)
 
 ; Autoload markdown
 (autoload 'markdown-mode "markdown-mode"
@@ -148,7 +156,7 @@ programming."
   (progn
     ;; if graphic
     ; Theme
-    (load-theme 'mustang t)
+    (load-theme 'solarized-light t)
     ; Make window maximized
     ; (shell-command "wmctrl -r :ACTIVE: -btoggle,maximized_vert,maximized_horz")
     ; Set font
