@@ -131,6 +131,7 @@
                         projectile
                         pkg-info
                         evil
+                        evil-leader
                         org
                         evil-org
                         spacegray-theme
