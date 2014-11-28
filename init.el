@@ -1,5 +1,54 @@
 ;; Emacs Configuration
 
+(setq init-home-dir "~/.emacs.d/lisp/")
+(add-to-list 'load-path init-home-dir)
+
+;; External Packages
+
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
+(require 'ensure-packages)
+
+(setq ensure-packages '(
+                        ag
+                        auto-complete
+                        autopair
+                        csv-mode
+                        deferred
+                        diff-hl
+                        erlang
+                        etags-table
+                        flymake-cursor
+                        flymake-easy
+                        git-gutter+
+                        git-gutter-fringe+
+                        fringe-helper
+                        goto-last-change
+                        helm
+                        jinja2-mode
+                        magit
+                        git-rebase-mode
+                        git-commit-mode
+                        markdown-mode
+                        multi-term
+                        alert
+                        popup
+                        popwin
+                        projectile
+                        pkg-info
+                        evil
+                        spacegray-theme
+                        sql-indent
+                        sublime-themes
+                        multiple-cursors
+                        mc-extras
+                        ))
+(ensure-packages-install-missing)
+
+(require 'async-bytecomp)
+
 ;; Prevent the cursor from blinking
 (blink-cursor-mode 0)
 
@@ -108,29 +157,6 @@ programming."
 
 ;; Elscreen
 ;(load "elscreen" "ElScreen" t)
-
-;; ; Set up marmalade
-;; (require 'package)
-;; (add-to-list 'package-archives
-;;     '("marmalade" .
-;;       "http://marmalade-repo.org/packages/"))
-;; (package-initialize)
-
-;; melpa
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(package-initialize)
-
-(setq package-list
-      '(ag auto-complete autopair csv-mode deferred diff-hl elixir-mode erlang etags-table find-file-in-project flymake-cursor flymake-jshint flymake-json flymake-php flymake-shell flymake-easy git-gutter-fringe+ fringe-helper git-gutter+ goto-last-change helm idomenu jinja2-mode leuven-theme magit git-rebase-mode git-commit-mode markdown-mode monokai-theme multi-term mustang-theme nginx-mode oauth2 org-pomodoro alert php-mode popup popwin projectile pkg-info epl dash rfringe s simple-httpd soft-morning-theme solarized-theme sql-indent sublime-themes twittering-mode w3 w3m web web-mode zenburn-theme evil multiple-cursors mc-extras))
-
-(mapc
- (lambda (package)
-   (or (package-installed-p package)
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
-           (package-install package))))
- package-list)
 
 ;; Evil mode
 (require 'evil)
