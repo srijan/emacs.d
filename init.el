@@ -76,14 +76,14 @@
 (setq standard-indent 2)
 
 ;; Use spaces for indents
-(setq-default indent-tabs-mode nil) 
+(setq-default indent-tabs-mode nil)
 
 ;; Backup files in ~/tmp/.emacs/backup
 (setq make-backup-files t)
 (setq version-control t)
 (setq backup-directory-alist (quote ((".*" . "~/tmp/.emacs/backup/"))))
 (setq delete-old-versions t)
- 
+
 ;; Jump mouse away when typing
 (mouse-avoidance-mode 'jump)
 
@@ -111,7 +111,7 @@ programming."
 
 ;; ; Set up marmalade
 ;; (require 'package)
-;; (add-to-list 'package-archives 
+;; (add-to-list 'package-archives
 ;;     '("marmalade" .
 ;;       "http://marmalade-repo.org/packages/"))
 ;; (package-initialize)
@@ -128,7 +128,7 @@ programming."
 (mapc
  (lambda (package)
    (or (package-installed-p package)
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package)) 
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
            (package-install package))))
  package-list)
 
@@ -173,7 +173,7 @@ programming."
 
 ;; TAGS
 (require 'etags-table)
-(setq tag-table-alist 
+(setq tag-table-alist
       '(("~/.emacs.d/" . "~/.emacs.d/TAGS")))
 (setq etags-table-alist tag-table-alist)
 (setq etags-table-search-up-depth 2)
@@ -263,9 +263,9 @@ programming."
       (ansi-term prg prg))))
 
 (defmacro djcb-program-shortcut (name key &optional use-existing)
-  "* macro to create a key binding KEY to start some terminal program PRG; 
+  "* macro to create a key binding KEY to start some terminal program PRG;
     if USE-EXISTING is true, try to switch to an existing buffer"
-  `(global-set-key ,key 
+  `(global-set-key ,key
                    '(lambda()
                       (interactive)
                       (djcb-term-start-or-switch ,name ,use-existing))))
