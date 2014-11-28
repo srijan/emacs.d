@@ -3,51 +3,7 @@
 (setq init-home-dir "~/.emacs.d/lisp/")
 (add-to-list 'load-path init-home-dir)
 
-;; External Packages
-
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
-
-(require 'ensure-packages)
-
-(setq ensure-packages '(
-                        ag
-                        auto-complete
-                        autopair
-                        csv-mode
-                        deferred
-                        diff-hl
-                        erlang
-                        etags-table
-                        flymake-cursor
-                        flymake-easy
-                        git-gutter+
-                        git-gutter-fringe+
-                        fringe-helper
-                        goto-last-change
-                        helm
-                        jinja2-mode
-                        magit
-                        git-rebase-mode
-                        git-commit-mode
-                        markdown-mode
-                        multi-term
-                        alert
-                        popup
-                        popwin
-                        projectile
-                        pkg-info
-                        evil
-                        spacegray-theme
-                        sql-indent
-                        sublime-themes
-                        multiple-cursors
-                        mc-extras
-                        ))
-(ensure-packages-install-missing)
-
-(require 'async-bytecomp)
+;; Some basic settings
 
 ;; Prevent the cursor from blinking
 (blink-cursor-mode 0)
@@ -138,6 +94,54 @@
 
 ;; Turn on highlight paren mode
 (show-paren-mode t)
+
+;; Load/Install External Packages
+
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+
+(require 'ensure-packages)
+
+(setq ensure-packages '(
+                        ag
+                        auto-complete
+                        autopair
+                        csv-mode
+                        deferred
+                        diff-hl
+                        erlang
+                        etags-table
+                        flymake-cursor
+                        flymake-easy
+                        git-gutter+
+                        git-gutter-fringe+
+                        fringe-helper
+                        goto-last-change
+                        helm
+                        jinja2-mode
+                        magit
+                        git-rebase-mode
+                        git-commit-mode
+                        markdown-mode
+                        multi-term
+                        alert
+                        popup
+                        popwin
+                        projectile
+                        pkg-info
+                        evil
+                        spacegray-theme
+                        sql-indent
+                        sublime-themes
+                        solarized-theme
+                        multiple-cursors
+                        mc-extras
+                        web-mode
+                        ))
+(ensure-packages-install-missing)
+
+(require 'async-bytecomp)
 
 (defun font-lock-comment-annotations ()
   "Highlight a bunch of well known comment annotations.
